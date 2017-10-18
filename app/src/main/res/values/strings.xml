@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">亚健康守护</string>
+
+    <string name="test_text">！！测试占位文本！！</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
