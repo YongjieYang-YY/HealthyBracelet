@@ -1,12 +1,10 @@
 package com.dengbin.healthybracelet;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -32,20 +30,16 @@ public class ItemAdapter extends ArrayAdapter<Item>
         // 若不存在，则从指定的layout布局膨胀创建新的列表项视图
         if (listItemView == null)
         {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.adapter, parent, false);
         }
 
         // 更新文本
-        TextView textView = (TextView) listItemView.findViewById(R.id.item_TextView);
+        TextView textView = (TextView) listItemView.findViewById(R.id.itemText);
         textView.setText(currentItem.getText());
 
-        // 更新图片
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.item_ImageView);
-        imageView.setImageResource(currentItem.getDrawableResourceID());
 
         return listItemView;
     }
-
 
 }
 

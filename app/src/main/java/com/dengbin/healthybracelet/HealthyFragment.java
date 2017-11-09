@@ -8,10 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class HeartRateFragment extends Fragment
+public class HealthyFragment extends Fragment
 {
     private Activity rootActivity;
     private View rootView;
@@ -23,7 +24,10 @@ public class HeartRateFragment extends Fragment
     {
         //确定根Activity和根View
         rootActivity = getActivity();
-        rootView = inflater.inflate(R.layout.fragment, container, false);
+        rootView = inflater.inflate(R.layout.fragment_curve, container, false);
+
+        TextView textView = (TextView) rootView.findViewById(R.id.curveTitle);
+        textView.setText("脉搏波");
 
         //添加列表项
         ListAdd();
@@ -43,9 +47,14 @@ public class HeartRateFragment extends Fragment
 
     private void ListAdd()
     {
-        for (int i = 0; i < 20; i++)
+        mList.add(new Item("脉率："));
+        mList.add(new Item("血压："));
+        mList.add(new Item("血氧："));
+        mList.add(new Item("呼吸："));
+
+        for (int i = 0; i < 10; i++)
         {
-            mList.add(new Item("！！心率！！", R.drawable.ic_test_drawable));
+            mList.add(new Item("！！健康！！"));
         }
     }
 }

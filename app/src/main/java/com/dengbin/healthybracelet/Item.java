@@ -3,12 +3,10 @@ package com.dengbin.healthybracelet;
 public class Item
 {
     private String mText;
-    private int mDrawableResourceID;
 
-    public Item(String tText, int tDrawableResourceID)
+    public Item(String tText)
     {
         mText = tText;
-        mDrawableResourceID = tDrawableResourceID;
     }
 
     public String getText()
@@ -16,8 +14,4 @@ public class Item
         return mText;
     }
 
-    public int getDrawableResourceID()
-    {
-        return mDrawableResourceID;
-    }
 }

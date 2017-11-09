@@ -8,10 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PulseWaveFragment extends Fragment
+public class SportFragment extends Fragment
 {
     private Activity rootActivity;
     private View rootView;
@@ -23,7 +24,10 @@ public class PulseWaveFragment extends Fragment
     {
         //确定根Activity和根View
         rootActivity = getActivity();
-        rootView = inflater.inflate(R.layout.fragment, container, false);
+        rootView = inflater.inflate(R.layout.fragment_curve, container, false);
+
+        TextView textView = (TextView) rootView.findViewById(R.id.curveTitle);
+        textView.setText("运动量");
 
         //添加列表项
         ListAdd();
@@ -43,9 +47,13 @@ public class PulseWaveFragment extends Fragment
 
     private void ListAdd()
     {
-        for (int i = 0; i < 20; i++)
+        mList.add(new Item("步数："));
+        mList.add(new Item("距离："));
+        mList.add(new Item("卡路里："));
+
+        for (int i = 0; i < 10; i++)
         {
-            mList.add(new Item("！！脉搏波！！", R.drawable.ic_test_drawable));
+            mList.add(new Item("！！运动！！"));
         }
     }
 }
