@@ -2,20 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="88dp">
-
-    <ImageView
-            android:id="@+id/item_ImageView"
-            android:src="@drawable/test"
-            android:layout_width="120dp"
-            android:layout_height="88dp"
-            android:scaleType="fitCenter"/>
-
+    
     <TextView
-            android:id="@+id/item_TextView"
+            android:id="@+id/itemText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/item_ImageView"
             android:layout_margin="16dp"
             android:textSize="18sp"
             android:textAppearance="?android:textAppearanceMedium"

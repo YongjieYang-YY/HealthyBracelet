@@ -4,10 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-public class FragmentViewPagerAdapter extends FragmentPagerAdapter
+public class FragmentAdapter extends android.support.v4.app.FragmentPagerAdapter
 {
 
-    public FragmentViewPagerAdapter(FragmentManager fm)
+    public FragmentAdapter(FragmentManager fm)
     {
         super(fm);
     }
@@ -17,19 +17,19 @@ public class FragmentViewPagerAdapter extends FragmentPagerAdapter
     {
         if (position == 0)
         {
-            return new PulseWaveFragment();
+            return new HealthyFragment();
         }
         else if (position == 1)
         {
-            return new HeartRateFragment();
+            return new SportFragment();
         }
         else if (position == 2)
         {
-            return new BloodPressureFragment();
+            return new SleepFragment();
         }
         else
         {
-            return new BloodOxygenFragment();
+            return new MyFragment();
         }
     }
 
@@ -38,19 +38,19 @@ public class FragmentViewPagerAdapter extends FragmentPagerAdapter
     {
         if (position == 0)
         {
-            return "脉搏波";
+            return "健康";
         }
         else if (position == 1)
         {
-            return "心率";
+            return "运动";
         }
         else if (position == 2)
         {
-            return "血压";
+            return "睡眠";
         }
         else
         {
-            return "血氧";
+            return "我的";
         }
     }
 

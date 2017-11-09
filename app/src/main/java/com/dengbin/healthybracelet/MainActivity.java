@@ -3,6 +3,7 @@ package com.dengbin.healthybracelet;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -42,10 +43,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationItemClickListener());
 
-        // 找到ViewPager ID
+        // 找到ViewPager ID(DrawerLayout主视图)
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         // 创建Fragment适配器
-        FragmentViewPagerAdapter adapter = new FragmentViewPagerAdapter(getSupportFragmentManager());
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
         // 为ViewPager绑定适配器
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private class NavigationItemClickListener implements NavigationView.OnNavigationItemSelectedListener
+    private class NavigationItemClickListener implements OnNavigationItemSelectedListener
     {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item)
@@ -62,15 +63,7 @@ public class MainActivity extends AppCompatActivity
             // Handle navigation view item clicks here.
             int id = item.getItemId();
 
-            if (id == R.id.nav_camera)
-            {
-                // Handle the camera action
-            }
-            else if (id == R.id.nav_gallery)
-            {
-
-            }
-            else if (id == R.id.nav_slideshow)
+            if (id == R.id.nav_gallery)
             {
 
             }
@@ -93,17 +86,4 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-//    @Override
-//    public void onBackPressed()
-//    {
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        if (drawer.isDrawerOpen(GravityCompat.START))
-//        {
-//            drawer.closeDrawer(GravityCompat.START);
-//        }
-//        else
-//        {
-//            super.onBackPressed();
-//        }
-//    }
 }
