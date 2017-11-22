@@ -48,10 +48,5 @@ public class MyFragment extends Fragment
         mList.add(new Item("个人信息："));
         mList.add(new Item("医师信息："));
         mList.add(new Item("紧急联系人："));
-
-        for (int i = 0; i < 10; i++)
-        {
-            mList.add(new Item("！！我的！！"));
-        }
     }
 }

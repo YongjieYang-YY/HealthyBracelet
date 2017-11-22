@@ -1,12 +1,15 @@
 package com.dengbin.healthybracelet;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -36,6 +39,9 @@ public class HealthyFragment extends Fragment
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(new ItemAdapter(getActivity(), mList));
 
+        //列表视图绑定项视图点击监听器
+        listView.setOnItemClickListener(new onItemClickListener());
+
         return rootView;
     }
 
@@ -45,16 +51,27 @@ public class HealthyFragment extends Fragment
         super.onStop();
     }
 
+    //项视图点击监听器类
+    private class onItemClickListener implements OnItemClickListener
+    {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int position, long id)
+        {
+            Item currentItem = mList.get(position);
+            String text = currentItem.getText();
+
+            Intent intent = new Intent();
+            intent.putExtra("Title", text);
+            intent.setClass(rootActivity, HistoryActivity.class);
+            rootActivity.startActivity(intent);
+        }
+    }
+
     private void ListAdd()
     {
-        mList.add(new Item("脉率："));
-        mList.add(new Item("血压："));
-        mList.add(new Item("血氧："));
-        mList.add(new Item("呼吸："));
-
-        for (int i = 0; i < 10; i++)
-        {
-            mList.add(new Item("！！健康！！"));
-        }
+        mList.add(new Item("脉率"));
+        mList.add(new Item("血压"));
+        mList.add(new Item("血氧"));
+        mList.add(new Item("呼吸"));
     }
 }

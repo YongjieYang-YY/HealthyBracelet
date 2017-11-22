@@ -50,10 +50,5 @@ public class SleepFragment extends Fragment
         mList.add(new Item("深度睡眠时长："));
         mList.add(new Item("浅度睡眠时长："));
         mList.add(new Item("清醒时长："));
-
-        for (int i = 0; i < 10; i++)
-        {
-            mList.add(new Item("！！睡眠！！"));
-        }
     }
 }
