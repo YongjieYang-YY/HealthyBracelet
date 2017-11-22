@@ -50,10 +50,5 @@ public class SportFragment extends Fragment
         mList.add(new Item("步数："));
         mList.add(new Item("距离："));
         mList.add(new Item("卡路里："));
-
-        for (int i = 0; i < 10; i++)
-        {
-            mList.add(new Item("！！运动！！"));
-        }
     }
 }
